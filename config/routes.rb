@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   get '/auth/failure', :to => 'sessions#failure'
   get '/logout', :to => 'sessions#destroy'
 
-  resources :expenditures
-  
-  devise_for :users
+devise_for :users
+
+resources :users do
+    resources :expenditures
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

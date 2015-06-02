@@ -1,14 +1,13 @@
 class ExpendituresController < ApplicationController
 	def new
 		@expenditure = Expenditure.new
-		@expenditure.save
 	end
 
 	def create
 		@expenditure = Expenditure.create(expenditure_params)
 
 		if @expenditure.save
-			redirect to @expenditure
+			redirect_to @expenditure
 		else
 			render :new
 		end
@@ -16,6 +15,24 @@ class ExpendituresController < ApplicationController
 
 	def index
 		@expenditures = Expenditure.all
+	end
+
+	def show
+		@expenditure = Expenditure.find(params[:id])
+	end
+
+	def edit
+		@expenditure = Expenditure.find(params[:id])
+	end
+
+	def update 
+		@expenditure = Expenditure.create(expenditure_params)
+
+		if @expenditure.save
+			redirect_to @expenditure
+		else
+			render :edit
+		end
 	end
 
 private

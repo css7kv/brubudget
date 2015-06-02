@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+  	@user = current_user
   end
 
   def create
@@ -25,5 +26,5 @@ end
   session[:user_id] = nil
   render :text => "You've logged out!"
 	end
-	
+
 end

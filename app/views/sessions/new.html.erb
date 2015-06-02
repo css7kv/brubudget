@@ -1,3 +1,9 @@
+<div align='center'>
 <h1>Welcome to BruBudget!</h1>
-<strong>Log in below:</strong>
-<%= link_to "Connect With Facebook", "/auth/facebook" %>
+<strong>Use the links below to either...</strong>
+<p><%= link_to "Add an expenditure", new_user_expenditure_path(@user) %></p><br>
+<p><%= link_to "See all existing expenditures", user_expenditures_path(@user) %></p><br>
+
+</div>
+
+
