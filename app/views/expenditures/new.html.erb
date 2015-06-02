@@ -1,1 +1,25 @@
-<= form_for @post, html: { multipart: true } do |f|
+<h1>Add a new expenditure below:</h1>
+
+<%= form_for @expenditure, :html => { :multipart => true } do |form| %>
+
+	<p>
+		<%= form.label :item %><br>
+		<%= form.text_field :item %>
+	</p>
+
+	<p>
+		<%= form.label :price %><br>
+		<%= form.text_field :price %><br>
+	</p>
+
+	<p>
+		Image<br><br>
+		<%= form.file_field :image %>
+	</p>
+
+	<p>
+		<%= form.submit %>
+	</p>
+
+<% end %>
+
